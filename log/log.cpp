@@ -19,9 +19,7 @@
 
 #include <switch.h>
 
-#if defined(AMS_BUILD_FOR_AUDITING) || defined(AMS_BUILD_FOR_DEBUGGING)
 #include "fatal_handler_bin.h"
-#endif
 
 #define ATMOSPHERE_REBOOT_TO_FATAL_MAGIC 0x32454641
 #define ATMOSPHERE_IRAM_PAYLOAD_BASE 0x40010000
