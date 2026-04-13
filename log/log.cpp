@@ -106,7 +106,7 @@ void Log(const char *data, ...) {
     SmcCopyToIram(IRAM_LOG_CTX_ADDR, working_buf, sizeof(working_buf));
 }
 
-void ViewLog() {
+[[noreturn]] void ViewLog() {
     constexpr size_t PageSize = 4096;
     for (size_t ofs = 0; ofs < fatal_handler_bin_size; ofs += PageSize) {
         memcpy(&working_buf, fatal_handler_bin + ofs, std::min(fatal_handler_bin_size - ofs, PageSize));
